@@ -5,7 +5,7 @@ import (
 
 	"github.com/abmpio/abmp/pkg/log"
 	"github.com/abmpio/app"
-	"github.com/abmpio/app/web"
+	"github.com/abmpio/app/cli"
 
 	"github.com/abmpio/configurationx"
 	"github.com/abmpio/configurationx/options/db"
@@ -28,10 +28,10 @@ type gormDbManager struct {
 var _ IGormDbManager = (*gormDbManager)(nil)
 
 func init() {
-	web.ConfigureService(serviceConfigurator)
+	cli.ConfigureService(serviceConfigurator)
 }
 
-func serviceConfigurator(web web.WebApplication) {
+func serviceConfigurator(cliApp cli.CliApplication) {
 	app.Context.RegistInstanceAs(newGormDbManager(), new(IGormDbManager))
 }
 
