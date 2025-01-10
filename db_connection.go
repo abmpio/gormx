@@ -28,6 +28,8 @@ type gormDbManager struct {
 var _ IGormDbManager = (*gormDbManager)(nil)
 
 func init() {
+
+	log.Logger.Info("gormx starter init")
 	cli.ConfigureService(serviceConfigurator)
 }
 
