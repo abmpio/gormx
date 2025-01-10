@@ -29,7 +29,7 @@ var _ IGormDbManager = (*gormDbManager)(nil)
 
 func init() {
 
-	log.Logger.Info("gormx starter init")
+	fmt.Println("gormx starter init")
 	cli.ConfigureService(serviceConfigurator)
 }
 
